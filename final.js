@@ -51,22 +51,22 @@ document.getElementById('fetch-users').addEventListener('click', fetchUsers);
 
  async function fetchFemaleUsers() {
             try {
-                // Fetch the data from the Random User API for females
+              
                 const response = await fetch('https://randomuser.me/api/?gender=female&results=10');
                 
-                // Check if the request was successful
+           
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
 
-                // Parse the JSON response
+                
                 const data = await response.json();
 
-                // Get the container for displaying female users
+                
                 const femaleUserList = document.getElementById('female-user-list');
-                femaleUserList.innerHTML = ''; // Clear previous data
+                femaleUserList.innerHTML = '';
 
-                // Loop through each female user and display their information
+              
                 data.results.forEach((user, idx) => {
                     const userDiv = document.createElement('div');
                     userDiv.style.border = "1px solid #ccc";
@@ -90,25 +90,25 @@ document.getElementById('fetch-users').addEventListener('click', fetchUsers);
             }
         }
 
-        // Async function to fetch male users
+    
         async function fetchMaleUsers() {
             try {
-                // Fetch the data from the Random User API for males
+                
                 const response = await fetch('https://randomuser.me/api/?gender=male&results=10');
                 
-                // Check if the request was successful
+            
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
 
-                // Parse the JSON response
+                
                 const data = await response.json();
 
-                // Get the container for displaying male users
+             
                 const maleUserList = document.getElementById('male-user-list');
-                maleUserList.innerHTML = ''; // Clear previous data
+                maleUserList.innerHTML = ''; 
 
-                // Loop through each male user and display their information
+               
                 data.results.forEach((user, idx) => {
                     const userDiv = document.createElement('div');
                     userDiv.style.border = "1px solid #ccc";
@@ -132,6 +132,6 @@ document.getElementById('fetch-users').addEventListener('click', fetchUsers);
             }
         }
 
-        // Event listeners for the buttons
+        
         document.getElementById('fetch-users-btn').addEventListener('click', fetchFemaleUsers);
         document.getElementById('fetch-male-users-btn').addEventListener('click', fetchMaleUsers);
