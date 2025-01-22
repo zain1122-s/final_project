@@ -1,4 +1,4 @@
-let URL = "https://icanhazdadjoke.com/";
+let URL = "https://randomuser.me/api/?results=5000";
 
 function fetchDadJokes() {
   return new Promise((resolve, reject) => {
